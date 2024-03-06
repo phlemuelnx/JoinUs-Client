@@ -1,0 +1,24 @@
+
+.dashboard {
+  background: var(--bg-color);
+  color: var(--text-color);
+  height: 100vh;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard button {
+  background: var(--button-color);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  height: 2.5rem;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+}
