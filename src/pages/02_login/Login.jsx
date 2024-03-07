@@ -39,7 +39,7 @@ const Login = () => {
       if (error.response) {
         setError(error.response.data.error);
       } else {
-        setError('An error occurred. Please try again.');
+        setError('Waiting for server response. Please try again.');
       }
     }
   };

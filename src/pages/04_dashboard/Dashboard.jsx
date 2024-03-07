@@ -1,6 +1,9 @@
+import { useNavigate } from 'react-router-dom';
 import './Dashboard.css';
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
   const logoutUser = () => {
     localStorage.removeItem('token');
     navigate('/login');

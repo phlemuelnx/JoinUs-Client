@@ -10,8 +10,8 @@ import Dashboard from './pages/04_dashboard/Dashboard';
 import Footer from './pages/05_footer/Footer';
 import NotFound from './pages/99_notfound/NotFound';
 
-// axios.defaults.baseURL = 'http://localhost:4000';
-axios.defaults.baseURL = 'https://joinus-server.onrender.com';
+axios.defaults.baseURL = 'http://localhost:4000';
+// axios.defaults.baseURL = 'https://joinus-server.onrender.com';
 axios.defaults.withCredentials = true;
 
 function App() {
