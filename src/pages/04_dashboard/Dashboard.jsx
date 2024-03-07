@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { FaSquareGithub } from 'react-icons/fa6';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -14,6 +15,7 @@ const Dashboard = () => {
       <div className='overview'>
         <div className='title'>
           <h4>MERN Stack Authentication Demo</h4>
+          <p>Designed & Programmed by Lemuel Inciso</p>
         </div>
         <hr />
         <div className='about'>
@@ -23,7 +25,7 @@ const Dashboard = () => {
             showcasing the implementation of user authentication functionalities
             using the MERN (MongoDB, Express.js, React.js, Node.js) This project
             provides a seamless experience for users to register, login
-            securely, and access a personalized dashboard.
+            securely, and access the dashboard.
           </p>
         </div>
         <hr />
@@ -35,6 +37,14 @@ const Dashboard = () => {
           <p>• Authentication: JSON Web Tokens (JWT)</p>
           <p>• Deployment: Netlify | Render</p>
         </div>
+        <hr />
+        <div className='code'>
+          <h5>Source Code:</h5>
+          <a href='https://github.com/phlemuelnx/JoinUs-Client' target='_blank'>
+            <FaSquareGithub />
+          </a>
+        </div>
+
         <button onClick={logoutUser}>LOGOUT</button>
       </div>
     </div>

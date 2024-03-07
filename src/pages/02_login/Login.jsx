@@ -28,8 +28,8 @@ const Login = () => {
       });
 
       const token = response.data.token;
-      console.log(response);
-      console.log(token);
+      // console.log(response);
+      // console.log(token);
 
       if (token) {
         localStorage.setItem('token', token);
