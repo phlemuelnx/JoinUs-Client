@@ -11,6 +11,7 @@
   align-items: center;
 }
 
+
 /* ************************** */
 
 /* PARENT */
@@ -98,9 +99,14 @@
   flex: 1;
 }
 
+.birthday input {
+  background: white;
+}
+
 .sex select {
   display: block;
   height: 2.5rem;
+  background: white;
   border-radius: 5px;
   border: none;
   box-shadow: 1px 1px 3px #2a416a;

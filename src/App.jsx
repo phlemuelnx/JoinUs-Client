@@ -8,6 +8,7 @@ import Navbar from './pages/03_navbar/Navbar';
 import ProtectedRoutes from './utility/ProtectedRoutes';
 import Dashboard from './pages/04_dashboard/Dashboard';
 import Footer from './pages/05_footer/Footer';
+import ForgotPass from './pages/99_forgotpass/ForgotPass';
 import NotFound from './pages/99_notfound/NotFound';
 
 // axios.defaults.baseURL = 'http://localhost:4000';
@@ -21,6 +22,7 @@ function App() {
         {/* PUBLIC ROUTES */}
         <Route path='/register' element={<Register />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/forgot-password' element={<ForgotPass />} />
 
         {/* PRIVATE ROUTES */}
         <Route
