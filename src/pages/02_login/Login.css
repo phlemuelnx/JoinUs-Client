@@ -64,6 +64,17 @@
   transform: scale(0.95);
 }
 
+.login-button-container .spinner {
+  margin: 0 5px 0;
+}
+
+.login-button-container .logging-in {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .login-button-container p {
   font-size: 14px;
   margin-top: 1.5rem;

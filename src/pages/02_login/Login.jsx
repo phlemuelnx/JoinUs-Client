@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+
+// COMPONENTS
 import ErrorMsg from '../../components/ErrorMsg';
+import Spinner from '../../components/Spinner';
+
 import axios from 'axios';
 import './Login.css';
 
 const Login = () => {
   const navigate = useNavigate();
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -22,14 +27,13 @@ const Login = () => {
 
   const loginUser = async (e) => {
     e.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post('/login', data, {
         headers: { 'Content-Type': 'application/json' },
       });
 
       const token = response.data.token;
-      // console.log(response);
-      // console.log(token);
 
       if (token) {
         localStorage.setItem('token', token);
@@ -41,6 +45,8 @@ const Login = () => {
       } else {
         setError('Waiting for server response. Please try again.');
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -84,7 +90,16 @@ const Login = () => {
         </div>
 
         <div className='login-button-container'>
-          <button type='submit'>Login</button>
+          <button type='submit'>
+            {loading ? (
+              <div className='logging-in'>
+                <Spinner /> Logging in
+              </div>
+            ) : (
+              'Login'
+            )}
+          </button>
+
           <p>
             Don't have an account? <Link to='/register'>Register</Link>
           </p>

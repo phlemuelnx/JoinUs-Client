@@ -153,6 +153,12 @@
   transform: scale(0.95);
 }
 
+.register-button-container .registering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .register-button-container p {
   font-size: 14px;
   margin-top: 1.5rem;

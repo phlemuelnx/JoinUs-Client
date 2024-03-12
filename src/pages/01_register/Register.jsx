@@ -3,11 +3,14 @@ import { Link, useNavigate } from 'react-router-dom';
 import ErrorMsg from '../../components/ErrorMsg';
 import axios from 'axios';
 
+import Spinner from '../../components/Spinner';
+
 import './Register.css';
 
 const Register = () => {
   const navigate = useNavigate();
 
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [data, setData] = useState({
     firstName: '',
@@ -22,6 +25,7 @@ const Register = () => {
 
   const registerUser = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     try {
       await axios.post('/register', data);
@@ -31,8 +35,10 @@ const Register = () => {
         setError(error.response.data.error);
       } else {
         // Fallback error message
-        setError('An error occurred. Please try again.');
+        setError('Waiting for server response. Please try again.');
       }
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -143,8 +149,18 @@ const Register = () => {
         </div>
 
         <div className='register-button-container'>
-          <button type='submit' className='register-btn'>
+          {/* <button type='submit' className='register-btn'>
             Submit
+          </button> */}
+
+          <button type='submit'>
+            {loading ? (
+              <div className='registering'>
+                <Spinner /> Register
+              </div>
+            ) : (
+              'Register'
+            )}
           </button>
 
           <p>
